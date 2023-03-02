@@ -35,4 +35,24 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 3.125rem 0;
+}
+
+#container.debug{
+    height: 32.875rem;
+    width: 32.875rem;
+    background-color: blueviolet;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.cell {
+    background-color: #7fffd3;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100% / 10);
+    width: calc(100% / 10);
 }
