@@ -12,6 +12,20 @@ Reset
 
 /*
 ---------
+common
+---------
+*/
+
+.d-flex {
+    display: flex;
+}
+
+.d-none {
+    display: none;
+}
+
+/*
+---------
 main
 ---------
 */
@@ -38,11 +52,10 @@ main {
     padding: 3.125rem 0;
 }
 
-#container.debug{
+#container{
     height: 32.875rem;
     width: 32.875rem;
     background-color: blueviolet;
-    display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
 }

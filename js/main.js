@@ -18,9 +18,13 @@ function createCell (element1, element2) {
     return cell;
 };
 
+function numberValue (item, value) {
+   return item.innerText = value
+};
+
 function appentToContainer (container, cell) {
-    container.append(cell);
-}
+   return container.append(cell);
+};
 
 /*
 ---------
@@ -28,8 +32,17 @@ Main
 ---------
 */
 
-for (let i = 0; i < 100; i++) {
-    const createdItem = createCell('div', 'cell');
+const button = document.querySelector('.start-button');
+
+button.addEventListener('click', function() {
+    const container = document.getElementById('container');
+    container.classList.remove('d-none');
+    container.classList.add('d-flex');
+});
+
+for (let i = 1; i <= 100; i++) {
+    const createdItem = createCell('div', 'cell', i);
     const container = document.getElementById('container');
     appentToContainer(container, createdItem);
-}
+    numberValue(createdItem, i);
+};
