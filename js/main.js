@@ -36,8 +36,12 @@ const button = document.querySelector('.start-button');
 
 button.addEventListener('click', function() {
     const container = document.getElementById('container');
-    container.classList.remove('d-none');
-    container.classList.add('d-flex');
+    container.classList.replace('d-none', 'd-flex');
+});
+
+button.addEventListener('dblclick', function() {  //non resetta ma nasconde
+    const container = document.getElementById('container');
+    container.classList.replace('d-flex', 'd-none');
 });
 
 for (let i = 1; i <= 100; i++) {
@@ -46,3 +50,11 @@ for (let i = 1; i <= 100; i++) {
     appentToContainer(container, createdItem);
     numberValue(createdItem, i);
 };
+
+const cell = document.querySelectorAll('.cell');
+
+ for (let i = 0; i < cell.length; i++) {
+     cell[i].addEventListener('click', function() {
+       cell[i].classList.toggle('clicked-cell');
+     });
+ };
