@@ -1,0 +1,38 @@
+/*
+---------
+Reset
+---------
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*
+---------
+main
+---------
+*/
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header, footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5625rem .9375rem;
+}
+
+main {
+    flex-grow: 1;
+    background-color: #7fffd3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
