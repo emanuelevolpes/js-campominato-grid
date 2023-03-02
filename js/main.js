@@ -28,6 +28,8 @@ Main
 ---------
 */
 
-const createdItem = createCell('div', 'cell');
-const container = document.getElementById('container');
-appentToContainer(container, createdItem);
+for (let i = 0; i < 100; i++) {
+    const createdItem = createCell('div', 'cell');
+    const container = document.getElementById('container');
+    appentToContainer(container, createdItem);
+}
