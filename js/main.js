@@ -82,7 +82,7 @@ if (value === 'Hard') {
     };
 };
 
-const cell = document.querySelectorAll('.cell');
+const cell = document.querySelectorAll('.cell,.cell-medium,.cell-hard');
 
  for (let i = 0; i < cell.length; i++) {
      cell[i].addEventListener('click', function() {
