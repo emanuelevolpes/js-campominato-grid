@@ -52,11 +52,34 @@ button.addEventListener('dblclick', function() {  //non resetta ma nasconde
     container.classList.replace('d-flex', 'd-none');
 });
 
-for (let i = 1; i <= 100; i++) {
-    const createdItem = createCell('div', 'cell', i);
-    const container = document.getElementById('container');
-    appentToContainer(container, createdItem);
-    numberValue(createdItem, i);
+const e = document.getElementById("difficult-select");
+let value = e.value;
+
+if (value === 'Easy') {
+    for (let i = 1; i <= 100; i++) {
+        const createdItem = createCell('div', 'cell', i);
+        const container = document.getElementById('container');
+        appentToContainer(container, createdItem);
+        numberValue(createdItem, i);
+    };
+};
+
+if (value === 'Medium') {
+    for (let i = 1; i <= 81; i++) {
+        const createdItem = createCell('div', 'cell-medium', i);
+        const container = document.getElementById('container');
+        appentToContainer(container, createdItem);
+        numberValue(createdItem, i);
+    };
+};
+
+if (value === 'Hard') {
+    for (let i = 1; i <= 49; i++) {
+        const createdItem = createCell('div', 'cell-hard', i);
+        const container = document.getElementById('container');
+        appentToContainer(container, createdItem);
+        numberValue(createdItem, i);
+    };
 };
 
 const cell = document.querySelectorAll('.cell');

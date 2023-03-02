@@ -71,10 +71,6 @@ header button {
     width: 6.25rem;
 }
 
-/* header select {
-    padding: 0 .3125rem;
-} */
-
 main {
     flex-grow: 1;
     background-color: #7fffd3;
@@ -102,4 +98,22 @@ main {
     align-items: center;
     height: calc(100% / 10);
     width: calc(100% / 10);
+}
+
+.cell-medium {
+    border: .0625rem solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100% / 9);
+    width: calc(100% / 9);
+}
+
+.cell-hard {
+    border: .0625rem solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100% / 7);
+    width: calc(100% / 7);
 }
