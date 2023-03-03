@@ -20,10 +20,9 @@ Functions
 ----------
 */
 
-function createCell(element1, element2, content) {
+function createCell(element1, element2) {
     const cell = document.createElement(element1);
     cell.classList.add(element2);
-    cell.innerText = content;
     return cell;
 };
 
@@ -53,7 +52,7 @@ button.addEventListener('click', function () {
 
     if (value === 'Easy') {
         for (let i = 1; i <= 100; i++) {
-            const createdItem = createCell('div', 'cell', i);
+            const createdItem = createCell('div', 'cell');
             const container = document.getElementById('container');
             appentToContainer(container, createdItem);
             numberValue(createdItem, i);
@@ -62,7 +61,7 @@ button.addEventListener('click', function () {
 
     if (value === 'Medium') {
         for (let i = 1; i <= 81; i++) {
-            const createdItem = createCell('div', 'cell-medium', i);
+            const createdItem = createCell('div', 'cell-medium');
             const container = document.getElementById('container');
             appentToContainer(container, createdItem);
             numberValue(createdItem, i);
@@ -71,7 +70,7 @@ button.addEventListener('click', function () {
 
     if (value === 'Hard') {
         for (let i = 1; i <= 49; i++) {
-            const createdItem = createCell('div', 'cell-hard', i);
+            const createdItem = createCell('div', 'cell-hard');
             const container = document.getElementById('container');
             appentToContainer(container, createdItem);
             numberValue(createdItem, i);
@@ -83,11 +82,7 @@ button.addEventListener('click', function () {
     for (let i = 0; i < cell.length; i++) {
         cell[i].addEventListener('click', function () {
             cell[i].classList.toggle('clicked-cell');
+            console.log(numberValue(cell, i + 1));
         });
     };
 });
-
-// button.addEventListener('dblclick', function() {  //non resetta ma nasconde
-//     const container = document.getElementById('container');
-//     container.classList.replace('d-flex', 'd-none');
-// });
