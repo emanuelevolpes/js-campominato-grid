@@ -92,7 +92,7 @@ main {
 }
 
 .cell {
-    border: .0625rem solid black;
+    outline: .0625rem solid black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -101,7 +101,7 @@ main {
 }
 
 .cell-medium {
-    border: .0625rem solid black;
+    outline: .0625rem solid black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -110,7 +110,7 @@ main {
 }
 
 .cell-hard {
-    border: .0625rem solid black;
+    outline: .0625rem solid black;
     display: flex;
     justify-content: center;
     align-items: center;

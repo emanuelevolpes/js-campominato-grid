@@ -20,18 +20,19 @@ Functions
 ----------
 */
 
-function createCell (element1, element2) {
+function createCell(element1, element2, content) {
     const cell = document.createElement(element1);
     cell.classList.add(element2);
+    cell.innerText = content;
     return cell;
 };
 
-function numberValue (item, value) {
-   return item.innerText = value
+function numberValue(item, value) {
+    return item.innerText = value
 };
 
-function appentToContainer (container, cell) {
-   return container.append(cell);
+function appentToContainer(container, cell) {
+    return container.append(cell);
 };
 
 /*
@@ -42,50 +43,51 @@ Main
 
 const button = document.querySelector('.start-button');
 
-button.addEventListener('click', function() {
+button.addEventListener('click', function () {
     const container = document.getElementById('container');
+    container.innerHTML = '';
     container.classList.replace('d-none', 'd-flex');
+
+    const e = document.getElementById("difficult-select");
+    let value = e.value;
+
+    if (value === 'Easy') {
+        for (let i = 1; i <= 100; i++) {
+            const createdItem = createCell('div', 'cell', i);
+            const container = document.getElementById('container');
+            appentToContainer(container, createdItem);
+            numberValue(createdItem, i);
+        };
+    };
+
+    if (value === 'Medium') {
+        for (let i = 1; i <= 81; i++) {
+            const createdItem = createCell('div', 'cell-medium', i);
+            const container = document.getElementById('container');
+            appentToContainer(container, createdItem);
+            numberValue(createdItem, i);
+        };
+    };
+
+    if (value === 'Hard') {
+        for (let i = 1; i <= 49; i++) {
+            const createdItem = createCell('div', 'cell-hard', i);
+            const container = document.getElementById('container');
+            appentToContainer(container, createdItem);
+            numberValue(createdItem, i);
+        };
+    };
+
+    const cell = document.querySelectorAll('.cell,.cell-medium,.cell-hard');
+
+    for (let i = 0; i < cell.length; i++) {
+        cell[i].addEventListener('click', function () {
+            cell[i].classList.toggle('clicked-cell');
+        });
+    };
 });
 
-button.addEventListener('dblclick', function() {  //non resetta ma nasconde
-    const container = document.getElementById('container');
-    container.classList.replace('d-flex', 'd-none');
-});
-
-const e = document.getElementById("difficult-select");
-let value = e.value;
-
-if (value === 'Easy') {
-    for (let i = 1; i <= 100; i++) {
-        const createdItem = createCell('div', 'cell', i);
-        const container = document.getElementById('container');
-        appentToContainer(container, createdItem);
-        numberValue(createdItem, i);
-    };
-};
-
-if (value === 'Medium') {
-    for (let i = 1; i <= 81; i++) {
-        const createdItem = createCell('div', 'cell-medium', i);
-        const container = document.getElementById('container');
-        appentToContainer(container, createdItem);
-        numberValue(createdItem, i);
-    };
-};
-
-if (value === 'Hard') {
-    for (let i = 1; i <= 49; i++) {
-        const createdItem = createCell('div', 'cell-hard', i);
-        const container = document.getElementById('container');
-        appentToContainer(container, createdItem);
-        numberValue(createdItem, i);
-    };
-};
-
-const cell = document.querySelectorAll('.cell,.cell-medium,.cell-hard');
-
- for (let i = 0; i < cell.length; i++) {
-     cell[i].addEventListener('click', function() {
-       cell[i].classList.toggle('clicked-cell');
-     });
- };
+// button.addEventListener('dblclick', function() {  //non resetta ma nasconde
+//     const container = document.getElementById('container');
+//     container.classList.replace('d-flex', 'd-none');
+// });
